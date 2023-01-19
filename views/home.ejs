@@ -1,0 +1,70 @@
+<!-- home.ejs -->
+<!-- <h1>Welcome to home</h1> -->
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Video</h4>
+        </div>
+        <div class="card-body">
+          <!-- <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1> -->
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Testitem</li>
+            <li>Testitem</li>
+            <li>Testitem</li>
+            <li>Testitem</li>
+          </ul>
+          <button id="video-card" type="button" class="w-100 btn btn-lg btn-outline-primary">GO</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Audio</h4>
+          </div>
+          <div class="card-body">
+            <!-- <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1> -->
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Testitem</li>
+                <li>Testitem</li>
+                <li>Testitem</li>
+                <li>Testitem</li>
+            </ul>
+            <button id="audio-card" type="button" class="w-100 btn btn-lg btn-outline-primary">GO</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Other</h4>
+          </div>
+          <div class="card-body">
+            <!-- <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1> -->
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Testitem</li>
+                <li>Testitem</li>
+                <li>Testitem</li>
+                <li>Testitem</li>
+            </ul>
+            <button id="other-card" type="button" class="w-100 btn btn-lg btn-outline-primary">GO</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  
+  <script>
+    document.getElementById('video-card').addEventListener('click', () => {
+      window.location.href = '/video';
+    });
+    document.getElementById('audio-card').addEventListener('click', () => {
+      window.location.href = '/audio';
+    });
+    document.getElementById('other-card').addEventListener('click', () => {
+      window.location.href = '/other';
+    });
+  </script>
+  

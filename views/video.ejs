@@ -1,0 +1,292 @@
+<!-- video.ejs -->
+<!-- <h1>Welcome to video</h1> -->
+
+<!-- File dropdown stuff -->
+<script>
+    var formData = new FormData();
+  
+    $(document).ready(function() {
+      $('.custom-file-input').on('change', function() {
+        let fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
+      });
+    });
+  
+    $(document).ready(function(){
+      $('.card').on('dragover', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).addClass('drag-over');
+        console.log('File is being dragged over the card');
+      });
+      
+      $('.card').on('dragleave', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).removeClass('drag-over');
+      });
+  
+      $('.card').on('drop', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).removeClass('drag-over');
+        var files = e.originalEvent.dataTransfer.files;
+        handleFiles(files);
+        console.log('File DROPPED');
+      });
+  
+      $(document).on('click', '.delete-btn', function() {
+        console.log('File DELETED');
+        $(this).closest('.file-box').remove();
+      });
+  
+      $("#submit-button").on("click", function(){
+        console.log("BUTTON CLICK");
+        console.log(formData);
+        
+        var xhr = new XMLHttpRequest();
+  
+        // formData.append("format", $('#dropdownMenuButton').val());
+        formData.append("resolution", $('#inputResolution').val());
+        formData.append("bitrate", $('#inputBitrate').val());
+        formData.append("framerate", $('#inputFramerate').val());
+        // formData.append("audioChannels", $('#inputAudioChannels').val());
+        formData.append("startTime", $('#inputStartTrim').val());
+        formData.append("endTime", $('#inputEndTrim').val());
+  
+        $.ajax({
+          url: '/convertvideo',
+          type: 'POST',
+          data: formData,
+  
+          xhrFields: {
+          responseType: 'blob'
+          },
+  
+          contentType: false,
+          processData: false,
+          success: function(data, status, xhr) {
+            console.log(data);
+            var contentDisposition = xhr.getResponseHeader('Content-Disposition');
+            var matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(contentDisposition);
+            var filename = matches[1].replace(/['"]/g, '');
+            var link = document.createElement('a');
+            link.href = window.URL.createObjectURL(data);
+            link.download = filename;
+            link.click();
+          }
+        });
+      });
+    });
+  
+    function handleFiles(files) {
+      console.log('HANDLE FILES');
+  
+      for (var i = 0; i < files.length; i++) {
+        var file = files[i];
+        var fileName = file.name;
+        var fileBox = document.createElement('div');
+        fileBox.classList.add('file-box');
+        fileBox.innerHTML = '<div class="file-name">' + fileName + '</div><button class="delete-btn">Delete</button>';
+        $('.card-text.drag-text').after(fileBox);
+        $('.upload-icon').addClass('upload-icon-hidden');
+      }
+  
+      console.log('ADDING FILES TO FORM DATA');
+      // Adding to formdata
+      for (var i = 0; i < files.length; i++) {
+          formData.append('file', files[i]);
+      }
+  
+      console.log(formData);
+    }
+  
+    // Dropdown stuff
+    $(document).ready(function() {
+      $('.dropdown-item').click(function() {
+        $('.selected-item').text($(this).text());
+        $("#dropdownMenuButton").text($(this).text());
+        console.log('ITEM SELECTED');
+        handleSelected($(this).text());
+      });
+  
+      // Spinner Stuff
+      $("#spinner").spinner();
+      $("#spinner").spinner({
+        min: 0,
+        max: 100
+      });
+    });
+  
+  
+  
+    function handleSelected(selected) {
+      // Append other fields if needed
+      formData.append('format', selected);
+    }
+  </script>
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <!-- <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Hochladen</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>10 users included</li>
+            <li>2 GB of storage</li>
+            <li>Email support</li>
+            <li>Help center access</li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+        </div>
+      </div>
+    </div> -->
+    
+    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Drag and Drop File Upload</h5>
+                <div class="form-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                  </div>
+                  <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                  </div>
+                  <div class="card-text drag-text">
+                    or drag and drop your file here
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">MP4</a>
+            <a class="dropdown-item" href="#">AVI</a>
+            <a class="dropdown-item" href="#">MKV</a>
+            <a class="dropdown-item" href="#">MOV</a>
+            <a class="dropdown-item" href="#">WMV</a>
+            <a class="dropdown-item" href="#">FLV</a>
+            <a class="dropdown-item" href="#">WEBM</a>
+            <a class="dropdown-item" href="#">OGV</a>
+            <a class="dropdown-item" href="#">TS</a>
+            <a class="dropdown-item" href="#">MTS</a>
+            <a class="dropdown-item" href="#">M2TS</a>
+          </div>
+        </div>
+        <input type="submit" id="submit-button" value="Konvertieren">
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="inputResolution">Video resolution</label>
+            <input type="text" class="form-control" id="inputResolution" placeholder="1920x1080, 1280x720, 854x480, 640x360, 426x240">
+          <label for="inputBitrate">Video bitrate</label>
+            <input type="number" class="form-control" id="inputBitrate" placeholder="2000kbps, 1000kbps, 500kbps, 250kbps, 100kbps">
+          <label for="inputFramerate">Video framerate</label>
+            <input type="number" class="form-control" id="inputFramerate" placeholder="60fps, 30fps, 24fps, 15fps, 10fps">
+          <label for="inputStartTrim">Start Trim</label>
+            <input type="text" class="form-control" id="inputStartTrim" placeholder="Trim Start HH:mm:ss">
+          <label for="inputEndTrim">End Trim</label>
+            <input type="text" class="form-control" id="inputEndTrim" placeholder="Trim End HH:mm:ss">
+        </div>
+      </form>
+      
+    <svg style="display:none">
+      <defs>
+        <symbol id="icon-imageUpload" clip-rule="evenodd" viewBox="0 0 96 96">
+          <path d="M47 6a21 21 0 0 0-12.3 3.8c-2.7 2.1-4.4 5-4.7 7.1-5.8 1.2-10.3 5.6-10.3 10.6 0 6 5.8 11 13 11h12.6V22.7l-7.1 6.8c-.4.3-.9.5-1.4.5-1 0-2-.8-2-1.7 0-.4.3-.9.6-1.2l10.3-8.8c.3-.4.8-.6 1.3-.6.6 0 1 .2 1.4.6l10.2 8.8c.4.3.6.8.6 1.2 0 1-.9 1.7-2 1.7-.5 0-1-.2-1.3-.5l-7.2-6.8v15.6h14.4c6.1 0 11.2-4.1 11.2-9.4 0-5-4-8.8-9.5-9.4C63.8 11.8 56 5.8 47 6Zm-1.7 42.7V38.4h3.4v10.3c0 .8-.7 1.5-1.7 1.5s-1.7-.7-1.7-1.5Z M27 49c-4 0-7 2-7 6v29c0 3 3 6 6 6h42c3 0 6-3 6-6V55c0-4-3-6-7-6H28Zm41 3c1 0 3 1 3 3v19l-13-6a2 2 0 0 0-2 0L44 79l-10-5a2 2 0 0 0-2 0l-9 7V55c0-2 2-3 4-3h41Z M40 62c0 2-2 4-5 4s-5-2-5-4 2-4 5-4 5 2 5 4Z"/>
+        </symbol>
+      </defs>
+    </svg>
+    
+    
+    <!-- <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">Enterprise</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>30 users included</li>
+            <li>15 GB of storage</li>
+            <li>Phone and email support</li>
+            <li>Help center access</li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- <h2 class="display-6 text-center mb-4">Compare plans</h2> -->
+
+  <!-- <div class="table-responsive">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th style="width: 34%;"></th>
+          <th style="width: 22%;">Free</th>
+          <th style="width: 22%;">Pro</th>
+          <th style="width: 22%;">Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="text-start">Public</th>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Private</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <th scope="row" class="text-start">Permissions</th>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Sharing</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Unlimited members</th>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+        <tr>
+          <th scope="row" class="text-start">Extra security</th>
+          <td></td>
+          <td></td>
+          <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
