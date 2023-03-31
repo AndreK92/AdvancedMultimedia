@@ -1,0 +1,1784 @@
+{
+  "a64multi": {
+    "type": "video",
+    "description": "Multicolor charset for Commodore 64 (codec a64_multi)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "a64multi5": {
+    "type": "video",
+    "description": "Multicolor charset for Commodore 64, extended with 5th color (colram) (codec a64_multi5)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "alias_pix": {
+    "type": "video",
+    "description": "Alias/Wavefront PIX image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "amv": {
+    "type": "video",
+    "description": "AMV Video",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "apng": {
+    "type": "video",
+    "description": "APNG (Animated Portable Network Graphics) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "asv1": {
+    "type": "video",
+    "description": "ASUS V1",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "asv2": {
+    "type": "video",
+    "description": "ASUS V2",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libaom-av1": {
+    "type": "video",
+    "description": "libaom AV1 (codec av1)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "librav1e": {
+    "type": "video",
+    "description": "librav1e AV1 (codec av1)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "avrp": {
+    "type": "video",
+    "description": "Avid 1:1 10-bit RGB Packer",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "avui": {
+    "type": "video",
+    "description": "Avid Meridien Uncompressed",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ayuv": {
+    "type": "video",
+    "description": "Uncompressed packed MS 4:4:4:4",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "bmp": {
+    "type": "video",
+    "description": "BMP (Windows and OS/2 bitmap)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "cfhd": {
+    "type": "video",
+    "description": "Cineform HD",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "cinepak": {
+    "type": "video",
+    "description": "Cinepak",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "cljr": {
+    "type": "video",
+    "description": "Cirrus Logic AccuPak",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "vc2": {
+    "type": "video",
+    "description": "SMPTE VC-2 (codec dirac)",
+    "frameMT": false,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "dnxhd": {
+    "type": "video",
+    "description": "VC3/DNxHD",
+    "frameMT": true,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "dpx": {
+    "type": "video",
+    "description": "DPX (Digital Picture Exchange) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "dvvideo": {
+    "type": "video",
+    "description": "DV (Digital Video)",
+    "frameMT": true,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ffv1": {
+    "type": "video",
+    "description": "FFmpeg video codec #1",
+    "frameMT": false,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ffvhuff": {
+    "type": "video",
+    "description": "Huffyuv FFmpeg variant",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "fits": {
+    "type": "video",
+    "description": "Flexible Image Transport System",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "flashsv": {
+    "type": "video",
+    "description": "Flash Screen Video",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "flashsv2": {
+    "type": "video",
+    "description": "Flash Screen Video Version 2",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "flv": {
+    "type": "video",
+    "description": "FLV / Sorenson Spark / Sorenson H.263 (Flash Video) (codec flv1)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "gif": {
+    "type": "video",
+    "description": "GIF (Graphics Interchange Format)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h261": {
+    "type": "video",
+    "description": "H.261",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h263": {
+    "type": "video",
+    "description": "H.263 / H.263-1996",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h263p": {
+    "type": "video",
+    "description": "H.263+ / H.263-1998 / H.263 version 2",
+    "frameMT": false,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libx264": {
+    "type": "video",
+    "description": "libx264 H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libx264rgb": {
+    "type": "video",
+    "description": "libx264 H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 RGB (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h264_amf": {
+    "type": "video",
+    "description": "AMD AMF H.264 Encoder (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h264_mf": {
+    "type": "video",
+    "description": "H264 via MediaFoundation (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h264_nvenc": {
+    "type": "video",
+    "description": "NVIDIA NVENC H.264 encoder (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "h264_qsv": {
+    "type": "video",
+    "description": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (Intel Quick Sync Video acceleration) (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "nvenc": {
+    "type": "video",
+    "description": "NVIDIA NVENC H.264 encoder (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "nvenc_h264": {
+    "type": "video",
+    "description": "NVIDIA NVENC H.264 encoder (codec h264)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "hap": {
+    "type": "video",
+    "description": "Vidvox Hap",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libx265": {
+    "type": "video",
+    "description": "libx265 H.265 / HEVC (codec hevc)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "nvenc_hevc": {
+    "type": "video",
+    "description": "NVIDIA NVENC hevc encoder (codec hevc)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "hevc_amf": {
+    "type": "video",
+    "description": "AMD AMF HEVC encoder (codec hevc)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "hevc_mf": {
+    "type": "video",
+    "description": "HEVC via MediaFoundation (codec hevc)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "hevc_nvenc": {
+    "type": "video",
+    "description": "NVIDIA NVENC hevc encoder (codec hevc)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "hevc_qsv": {
+    "type": "video",
+    "description": "HEVC (Intel Quick Sync Video acceleration) (codec hevc)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "huffyuv": {
+    "type": "video",
+    "description": "Huffyuv / HuffYUV",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "jpeg2000": {
+    "type": "video",
+    "description": "JPEG 2000",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libopenjpeg": {
+    "type": "video",
+    "description": "OpenJPEG JPEG 2000 (codec jpeg2000)",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "jpegls": {
+    "type": "video",
+    "description": "JPEG-LS",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ljpeg": {
+    "type": "video",
+    "description": "Lossless JPEG",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "magicyuv": {
+    "type": "video",
+    "description": "MagicYUV video",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mjpeg": {
+    "type": "video",
+    "description": "MJPEG (Motion JPEG)",
+    "frameMT": true,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mjpeg_qsv": {
+    "type": "video",
+    "description": "MJPEG (Intel Quick Sync Video acceleration) (codec mjpeg)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mpeg1video": {
+    "type": "video",
+    "description": "MPEG-1 video",
+    "frameMT": false,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mpeg2video": {
+    "type": "video",
+    "description": "MPEG-2 video",
+    "frameMT": false,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mpeg2_qsv": {
+    "type": "video",
+    "description": "MPEG-2 video (Intel Quick Sync Video acceleration) (codec mpeg2video)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mpeg4": {
+    "type": "video",
+    "description": "MPEG-4 part 2",
+    "frameMT": false,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libxvid": {
+    "type": "video",
+    "description": "libxvidcore MPEG-4 part 2 (codec mpeg4)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "msmpeg4v2": {
+    "type": "video",
+    "description": "MPEG-4 part 2 Microsoft variant version 2",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "msmpeg4": {
+    "type": "video",
+    "description": "MPEG-4 part 2 Microsoft variant version 3 (codec msmpeg4v3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "msvideo1": {
+    "type": "video",
+    "description": "Microsoft Video-1",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pam": {
+    "type": "video",
+    "description": "PAM (Portable AnyMap) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pbm": {
+    "type": "video",
+    "description": "PBM (Portable BitMap) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcx": {
+    "type": "video",
+    "description": "PC Paintbrush PCX image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pgm": {
+    "type": "video",
+    "description": "PGM (Portable GrayMap) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pgmyuv": {
+    "type": "video",
+    "description": "PGMYUV (Portable GrayMap YUV) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "png": {
+    "type": "video",
+    "description": "PNG (Portable Network Graphics) image",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ppm": {
+    "type": "video",
+    "description": "PPM (Portable PixelMap) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "prores": {
+    "type": "video",
+    "description": "Apple ProRes",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "prores_aw": {
+    "type": "video",
+    "description": "Apple ProRes (codec prores)",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "prores_ks": {
+    "type": "video",
+    "description": "Apple ProRes (iCodec Pro) (codec prores)",
+    "frameMT": true,
+    "sliceMT": true,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "qtrle": {
+    "type": "video",
+    "description": "QuickTime Animation (RLE) video",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "r10k": {
+    "type": "video",
+    "description": "AJA Kona 10-bit RGB Codec",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "r210": {
+    "type": "video",
+    "description": "Uncompressed RGB 10-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "rawvideo": {
+    "type": "video",
+    "description": "raw video",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "roqvideo": {
+    "type": "video",
+    "description": "id RoQ video (codec roq)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "rv10": {
+    "type": "video",
+    "description": "RealVideo 1.0",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "rv20": {
+    "type": "video",
+    "description": "RealVideo 2.0",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "sgi": {
+    "type": "video",
+    "description": "SGI image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "snow": {
+    "type": "video",
+    "description": "Snow",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "sunrast": {
+    "type": "video",
+    "description": "Sun Rasterfile image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "svq1": {
+    "type": "video",
+    "description": "Sorenson Vector Quantizer 1 / Sorenson Video 1 / SVQ1",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "targa": {
+    "type": "video",
+    "description": "Truevision Targa image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libtheora": {
+    "type": "video",
+    "description": "libtheora Theora (codec theora)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "tiff": {
+    "type": "video",
+    "description": "TIFF image",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "utvideo": {
+    "type": "video",
+    "description": "Ut Video",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "v210": {
+    "type": "video",
+    "description": "Uncompressed 4:2:2 10-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "v308": {
+    "type": "video",
+    "description": "Uncompressed packed 4:4:4",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "v408": {
+    "type": "video",
+    "description": "Uncompressed packed QT 4:4:4:4",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "v410": {
+    "type": "video",
+    "description": "Uncompressed 4:4:4 10-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libvpx": {
+    "type": "video",
+    "description": "libvpx VP8 (codec vp8)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libvpx-vp9": {
+    "type": "video",
+    "description": "libvpx VP9 (codec vp9)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "vp9_qsv": {
+    "type": "video",
+    "description": "VP9 video (Intel Quick Sync Video acceleration) (codec vp9)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libwebp_anim": {
+    "type": "video",
+    "description": "libwebp WebP image (codec webp)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libwebp": {
+    "type": "video",
+    "description": "libwebp WebP image (codec webp)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "wmv1": {
+    "type": "video",
+    "description": "Windows Media Video 7",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "wmv2": {
+    "type": "video",
+    "description": "Windows Media Video 8",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "wrapped_avframe": {
+    "type": "video",
+    "description": "AVFrame to AVPacket passthrough",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "xbm": {
+    "type": "video",
+    "description": "XBM (X BitMap) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "xface": {
+    "type": "video",
+    "description": "X-face image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "xwd": {
+    "type": "video",
+    "description": "XWD (X Window Dump) image",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "y41p": {
+    "type": "video",
+    "description": "Uncompressed YUV 4:1:1 12-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "yuv4": {
+    "type": "video",
+    "description": "Uncompressed packed 4:2:0",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "zlib": {
+    "type": "video",
+    "description": "LCL (LossLess Codec Library) ZLIB",
+    "frameMT": true,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "zmbv": {
+    "type": "video",
+    "description": "Zip Motion Blocks Video",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "aac": {
+    "type": "audio",
+    "description": "AAC (Advanced Audio Coding)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "aac_mf": {
+    "type": "audio",
+    "description": "AAC via MediaFoundation (codec aac)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ac3": {
+    "type": "audio",
+    "description": "ATSC A/52A (AC-3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ac3_fixed": {
+    "type": "audio",
+    "description": "ATSC A/52A (AC-3) (codec ac3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ac3_mf": {
+    "type": "audio",
+    "description": "AC3 via MediaFoundation (codec ac3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_adx": {
+    "type": "audio",
+    "description": "SEGA CRI ADX ADPCM",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "g722": {
+    "type": "audio",
+    "description": "G.722 ADPCM (codec adpcm_g722)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "g726": {
+    "type": "audio",
+    "description": "G.726 ADPCM (codec adpcm_g726)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "g726le": {
+    "type": "audio",
+    "description": "G.726 little endian ADPCM (\"right-justified\") (codec adpcm_g726le)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_ima_apm": {
+    "type": "audio",
+    "description": "ADPCM IMA Ubisoft APM",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_ima_qt": {
+    "type": "audio",
+    "description": "ADPCM IMA QuickTime",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_ima_ssi": {
+    "type": "audio",
+    "description": "ADPCM IMA Simon & Schuster Interactive",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_ima_wav": {
+    "type": "audio",
+    "description": "ADPCM IMA WAV",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_ms": {
+    "type": "audio",
+    "description": "ADPCM Microsoft",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_swf": {
+    "type": "audio",
+    "description": "ADPCM Shockwave Flash",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "adpcm_yamaha": {
+    "type": "audio",
+    "description": "ADPCM Yamaha",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "alac": {
+    "type": "audio",
+    "description": "ALAC (Apple Lossless Audio Codec)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libopencore_amrnb": {
+    "type": "audio",
+    "description": "OpenCORE AMR-NB (Adaptive Multi-Rate Narrow-Band) (codec amr_nb)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libvo_amrwbenc": {
+    "type": "audio",
+    "description": "Android VisualOn AMR-WB (Adaptive Multi-Rate Wide-Band) (codec amr_wb)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "aptx": {
+    "type": "audio",
+    "description": "aptX (Audio Processing Technology for Bluetooth)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "aptx_hd": {
+    "type": "audio",
+    "description": "aptX HD (Audio Processing Technology for Bluetooth)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "comfortnoise": {
+    "type": "audio",
+    "description": "RFC 3389 comfort noise generator",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "dca": {
+    "type": "audio",
+    "description": "DCA (DTS Coherent Acoustics) (codec dts)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "eac3": {
+    "type": "audio",
+    "description": "ATSC A/52 E-AC-3",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "flac": {
+    "type": "audio",
+    "description": "FLAC (Free Lossless Audio Codec)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "g723_1": {
+    "type": "audio",
+    "description": "G.723.1",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libgsm": {
+    "type": "audio",
+    "description": "libgsm GSM (codec gsm)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libgsm_ms": {
+    "type": "audio",
+    "description": "libgsm GSM Microsoft variant (codec gsm_ms)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mlp": {
+    "type": "audio",
+    "description": "MLP (Meridian Lossless Packing)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mp2": {
+    "type": "audio",
+    "description": "MP2 (MPEG audio layer 2)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mp2fixed": {
+    "type": "audio",
+    "description": "MP2 fixed point (MPEG audio layer 2) (codec mp2)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libtwolame": {
+    "type": "audio",
+    "description": "libtwolame MP2 (MPEG audio layer 2) (codec mp2)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libmp3lame": {
+    "type": "audio",
+    "description": "libmp3lame MP3 (MPEG audio layer 3) (codec mp3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libshine": {
+    "type": "audio",
+    "description": "libshine MP3 (MPEG audio layer 3) (codec mp3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mp3_mf": {
+    "type": "audio",
+    "description": "MP3 via MediaFoundation (codec mp3)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "nellymoser": {
+    "type": "audio",
+    "description": "Nellymoser Asao",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "opus": {
+    "type": "audio",
+    "description": "Opus",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libopus": {
+    "type": "audio",
+    "description": "libopus Opus (codec opus)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_alaw": {
+    "type": "audio",
+    "description": "PCM A-law / G.711 A-law",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_dvd": {
+    "type": "audio",
+    "description": "PCM signed 16|20|24-bit big-endian for DVD media",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_f32be": {
+    "type": "audio",
+    "description": "PCM 32-bit floating point big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_f32le": {
+    "type": "audio",
+    "description": "PCM 32-bit floating point little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_f64be": {
+    "type": "audio",
+    "description": "PCM 64-bit floating point big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_f64le": {
+    "type": "audio",
+    "description": "PCM 64-bit floating point little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_mulaw": {
+    "type": "audio",
+    "description": "PCM mu-law / G.711 mu-law",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s16be": {
+    "type": "audio",
+    "description": "PCM signed 16-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s16be_planar": {
+    "type": "audio",
+    "description": "PCM signed 16-bit big-endian planar",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s16le": {
+    "type": "audio",
+    "description": "PCM signed 16-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s16le_planar": {
+    "type": "audio",
+    "description": "PCM signed 16-bit little-endian planar",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s24be": {
+    "type": "audio",
+    "description": "PCM signed 24-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s24daud": {
+    "type": "audio",
+    "description": "PCM D-Cinema audio signed 24-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s24le": {
+    "type": "audio",
+    "description": "PCM signed 24-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s24le_planar": {
+    "type": "audio",
+    "description": "PCM signed 24-bit little-endian planar",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s32be": {
+    "type": "audio",
+    "description": "PCM signed 32-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s32le": {
+    "type": "audio",
+    "description": "PCM signed 32-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s32le_planar": {
+    "type": "audio",
+    "description": "PCM signed 32-bit little-endian planar",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s64be": {
+    "type": "audio",
+    "description": "PCM signed 64-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s64le": {
+    "type": "audio",
+    "description": "PCM signed 64-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s8": {
+    "type": "audio",
+    "description": "PCM signed 8-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_s8_planar": {
+    "type": "audio",
+    "description": "PCM signed 8-bit planar",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u16be": {
+    "type": "audio",
+    "description": "PCM unsigned 16-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u16le": {
+    "type": "audio",
+    "description": "PCM unsigned 16-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u24be": {
+    "type": "audio",
+    "description": "PCM unsigned 24-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u24le": {
+    "type": "audio",
+    "description": "PCM unsigned 24-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u32be": {
+    "type": "audio",
+    "description": "PCM unsigned 32-bit big-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u32le": {
+    "type": "audio",
+    "description": "PCM unsigned 32-bit little-endian",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_u8": {
+    "type": "audio",
+    "description": "PCM unsigned 8-bit",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "pcm_vidc": {
+    "type": "audio",
+    "description": "PCM Archimedes VIDC",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "real_144": {
+    "type": "audio",
+    "description": "RealAudio 1.0 (14.4K) (codec ra_144)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "roq_dpcm": {
+    "type": "audio",
+    "description": "id RoQ DPCM",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "s302m": {
+    "type": "audio",
+    "description": "SMPTE 302M",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "sbc": {
+    "type": "audio",
+    "description": "SBC (low-complexity subband codec)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "sonic": {
+    "type": "audio",
+    "description": "Sonic",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "sonicls": {
+    "type": "audio",
+    "description": "Sonic lossless",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libspeex": {
+    "type": "audio",
+    "description": "libspeex Speex (codec speex)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "truehd": {
+    "type": "audio",
+    "description": "TrueHD",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "tta": {
+    "type": "audio",
+    "description": "TTA (True Audio)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "vorbis": {
+    "type": "audio",
+    "description": "Vorbis",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": true,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libvorbis": {
+    "type": "audio",
+    "description": "libvorbis (codec vorbis)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "wavpack": {
+    "type": "audio",
+    "description": "WavPack",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "libwavpack": {
+    "type": "audio",
+    "description": "(codec wavpack)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "wmav1": {
+    "type": "audio",
+    "description": "Windows Media Audio 1",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "wmav2": {
+    "type": "audio",
+    "description": "Windows Media Audio 2",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ssa": {
+    "type": "subtitle",
+    "description": "ASS (Advanced SubStation Alpha) subtitle (codec ass)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "ass": {
+    "type": "subtitle",
+    "description": "ASS (Advanced SubStation Alpha) subtitle",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "dvbsub": {
+    "type": "subtitle",
+    "description": "DVB subtitles (codec dvb_subtitle)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "dvdsub": {
+    "type": "subtitle",
+    "description": "DVD subtitles (codec dvd_subtitle)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "mov_text": {
+    "type": "subtitle",
+    "description": "3GPP Timed Text subtitle",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "srt": {
+    "type": "subtitle",
+    "description": "SubRip subtitle (codec subrip)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "subrip": {
+    "type": "subtitle",
+    "description": "SubRip subtitle",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "text": {
+    "type": "subtitle",
+    "description": "Raw text subtitle",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "webvtt": {
+    "type": "subtitle",
+    "description": "WebVTT subtitle",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  },
+  "xsub": {
+    "type": "subtitle",
+    "description": "DivX subtitles (XSUB)",
+    "frameMT": false,
+    "sliceMT": false,
+    "experimental": false,
+    "drawHorizBand": false,
+    "directRendering": false
+  }
+}

@@ -1,0 +1,179 @@
+
+<!-- const outputPath = 'E:/Projekte/Studium/AdvancedMultimedia/TestVideos/extracted.jpg'; -->
+
+<!-- <div class="img-magnifier-container">
+    <img id="left-img" src="http://localhost:3000/getimage?image=E:\\Projekte\\Studium\\AdvancedMultimedia\\routes\\converted\\5c7bebfed113fb2276f25a705_original.jpg">
+    <img id="right-img" src="http://localhost:3000/getimage?image=E:\\Projekte\\Studium\\AdvancedMultimedia\\routes\\converted\\5c7bebfed113fb2276f25a705_converted.jpg">
+</div> -->
+
+<div id="imageContainer" class="img-magnifier-container">
+    <img id="left-img" src="http://localhost:3000/getimage?image=<%- image1 %>" alt="Extracted Image 01">
+    <img id="right-img" src="http://localhost:3000/getimage?image=<%- image2 %>" alt="Extracted Image 02">
+</div>
+
+<style>
+    * {box-sizing: border-box;}
+    
+    .img-magnifier-container {
+      position:relative;
+    }
+    
+    .img-magnifier-glass {
+      position: absolute;
+      border: 3px solid rgb(255, 0, 234);
+      border-radius: 50%;
+      cursor: none;
+      /*Set the size of the magnifier glass:*/
+      width: 100px;
+      height: 100px;
+    }
+
+    .img-magnifier-glassR {
+      position: absolute;
+      border: 3px solid rgb(255, 0, 234);
+      border-radius: 50%;
+      cursor: none;
+      /*Set the size of the magnifier glass:*/
+      width: 100px;
+      height: 100px;
+    }
+</style>
+
+<script>
+
+
+
+
+
+
+
+
+
+        function magnify() {
+            console.log("MAGNIFY RUN");
+
+            var imgLeft,imgRight, glassLeft, glassRight, wL, hL, wR, hR, bw;
+
+            var imgIDL = "left-img"
+            var imgIDR = "right-img"
+            var zoom = 10
+
+            imgLeft = document.getElementById(imgIDL);
+            imgRight = document.getElementById(imgIDR);
+
+            var width = imgLeft.offsetWidth;
+            var height = imgLeft.offsetHeight;
+
+            // console.log(imgLeft,width,height);
+
+            /*create magnifier glass LEFT*/
+            glassLeft = document.createElement("DIV");
+            glassLeft.setAttribute("class", "img-magnifier-glass");
+            /*insert magnifier glass:*/
+            imgLeft.parentElement.insertBefore(glassLeft, imgLeft);
+            /*set background properties for the magnifier glass:*/
+            glassLeft.style.backgroundImage = "url('" + imgLeft.src + "')";
+            glassLeft.style.backgroundRepeat = "no-repeat";
+            glassLeft.style.backgroundSize = (imgLeft.naturalWidth * zoom) + "px " + (imgLeft.naturalHeight * zoom) + "px";
+
+            /*create magnifier glass RIGHT*/
+            glassRight = document.createElement("DIV");
+            glassRight.setAttribute("class", "img-magnifier-glassR");
+            /*insert magnifier glass:*/
+            imgLeft.parentElement.insertBefore(glassRight, imgRight);
+            /*set background properties for the magnifier glass:*/
+            glassRight.style.backgroundImage = "url('" + imgRight.src + "')";
+            glassRight.style.backgroundRepeat = "no-repeat";
+            glassRight.style.backgroundSize = (imgRight.naturalWidth * zoom) + "px " + (imgRight.naturalHeight * zoom) + "px";
+
+            bw = 3;
+            wL = glassLeft.offsetWidth / 2;
+            hL = glassLeft.offsetHeight / 2;
+            wR = glassRight.offsetWidth / 2;
+            hR = glassRight.offsetHeight / 2;
+
+            /*execute a function when someone moves the magnifier glass over the image:*/
+            glassLeft.addEventListener("mousemove", moveMagnifier);
+            imgLeft.addEventListener("mousemove", moveMagnifier);
+            /*and also for touch screens:*/
+            glassLeft.addEventListener("touchmove", moveMagnifier);
+            imgLeft.addEventListener("touchmove", moveMagnifier);
+
+            function moveMagnifier(e) {
+                var pos, xL, yL, xR, yR;
+                /*prevent any other actions that may occur when moving over the image*/
+                e.preventDefault();
+                wL = glassLeft.offsetWidth / 2;
+            hL = glassLeft.offsetHeight / 2;
+            wR = glassRight.offsetWidth / 2;
+            hR = glassRight.offsetHeight / 2;
+                /*get the cursor's x and y positions:*/
+                pos = getCursorPos(e);
+                xL = pos.x;
+                yL = pos.y;
+
+                // Get the x and y position of the mouse relative to the first image
+                // xL = event.clientX - imgLeft.offsetLeft;
+                // yL = event.clientY - imgLeft.offsetTop;
+
+                // Calculate the x and y position for the second image
+                xR = xL / imgLeft.offsetWidth * glassRight.offsetWidth;
+                yR = yL / imgLeft.offsetHeight * glassRight.offsetHeight;
+
+                /*prevent the magnifier glass from being positioned outside the image:*/
+                if (xL > imgLeft.width - (wL / zoom)) {xL = imgLeft.width - (wL / zoom);}
+                if (xL < wL / zoom) {xL = wL / zoom;}
+                if (yL > imgLeft.height - (hL / zoom)) {yL = imgLeft.height - (hL / zoom);}
+                if (yL < hL / zoom) {yL = hL / zoom;}
+
+                // LEFT
+                /*set the position of the magnifier glass:*/
+                glassLeft.style.left = (xL - wL) + "px";
+                glassLeft.style.top = (yL - hL) + "px";
+
+                /*display what the magnifier glass "sees":*/
+                var positionL = "-" + ((xL * zoom) - wL + bw) + "px -" + ((yL * zoom) - hL + bw) + "px";
+                glassLeft.style.backgroundPosition = positionL;
+                // console.log("LEFT: " + positionL)
+
+                let rectL = imgLeft.getBoundingClientRect();
+                let xTL = rectL.left;
+                let yTL = rectL.top;
+                // console.log("LEFT: " + xTL, yTL);
+
+                let rectR = imgRight.getBoundingClientRect();
+                let xTR = rectR.left;
+                let yTR = rectR.top;
+                // console.log("RIGHT: " + xTR, yTR);
+
+                // RIGHT
+                /*set the position of the magnifier glass:*/
+                glassRight.style.left = (xL - wL) + imgLeft.width + "px";
+                glassRight.style.top =  (yL - hL) + "px";
+
+                /*display what the magnifier glass "sees":*/
+                var positionR = "-" + ((xL * zoom) - wL + bw) + imgLeft.width + "px -" + ((yL * zoom) - hL + bw) + "px";
+                glassRight.style.backgroundPosition = positionR;
+                // console.log("RIGHT: " + positionR)
+            }
+            
+            function getCursorPos(e) {
+                var a, x = 0, y = 0;
+                e = e || window.event;
+                /*get the x and y positions of the image:*/
+                a = imgLeft.getBoundingClientRect();
+                /*calculate the cursor's x and y coordinates, relative to the image:*/
+                x = e.pageX - a.left;
+                y = e.pageY - a.top;
+                /*consider any page scrolling:*/
+                x = x - window.pageXOffset;
+                y = y - window.pageYOffset;
+                return {x : x, y : y};
+            }
+        }
+
+        // magnify("left-img", 3);
+
+        setTimeout(magnify, 2000); 
+
+</script>

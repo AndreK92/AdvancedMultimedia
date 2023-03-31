@@ -1,5 +1,19 @@
 <!-- audio.ejs -->
-<h1>Welcome to audio</h1>
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+  <h1 class="display-4 fw-normal">Audio conversion</h1>
+  <p class="fs-5 text-muted">Drop one file into the dropzone.</p>
+</div>
+
+<style>
+  .selectpicker {
+    height: 50px;
+    width: 200px;
+  }
+  .pickerlabel {
+    height: 25px;
+    width: 150px;
+  }
+</style>
 
 <!-- File dropdown stuff -->
 <script>
@@ -33,6 +47,134 @@
         var files = e.originalEvent.dataTransfer.files;
         handleFiles(files);
         console.log('File DROPPED');
+
+        formData.append('type', "audio");
+        $.ajax({
+          url: "/metadata",
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(data) {
+
+            var metadata = data.metadata;
+            console.log(metadata)
+            
+            formats = data.formats;
+            codecs = data.codecs;
+            encoders = data.encoders;
+
+            var extension = data.extension;
+
+            // console.log(formats);
+            // console.log(metadata);
+            // console.log(formatcodecs);
+
+            var bitrate = metadata.streams[0].bit_rate;
+            var frequency = metadata.streams[0].sample_rate;
+            var audiochannels = metadata.streams[0].channels;
+
+            var codecName = metadata.streams[0].codec_name;
+            var codecNameLong = metadata.streams[0].codec_long_name;
+
+            console.log(bitrate)
+            console.log(frequency)
+            console.log(audiochannels)
+            // populate the text fields with the metadata values
+            // $("#duration").val(metadata.format.duration);
+            $("#inputAudioBitrate").val(bitrate);
+            $("#inputAudioFrequency").val(frequency);
+            $("#inputAudioChannels").val(audiochannels);
+            // $("#inputPixelFormat").val(pixelformat);
+
+            console.log("RECEIVED FORMATS")
+            let dropdownFormat = $("#pickerFormat");
+            const keysFormat = Object.keys(formats);
+            keysFormat.forEach(format => {
+              // console.log(codec)
+              dropdownFormat.append(`<option>${format}</option>`);
+            });
+
+            console.log("RECEIVED CODECS")
+            let dropdownCodec = $("#pickerCodec");
+            const keysCodec = Object.keys(codecs);
+            keysCodec.forEach(codec => {
+              // console.log(codec)
+              var value = codecs[codec]
+              if (value.canEncode) {
+                dropdownCodec.append(`<option>${codec}</option>`);
+              }
+            });
+
+            console.log("RECEIVED ENCODER")
+            // var encoderName;
+            // var encoderNames;
+            let dropdownEncoder = $("#pickerEncoder");
+            const keysEncoder = Object.keys(encoders);
+
+            // Encoder lists
+            var specificCodec = codecs[codecName];
+            if (codecs[codecName].description.includes("encoders: ")) {
+              var x = "encoders: "
+              var encoderString = specificCodec.description.substring(specificCodec.description.indexOf(x) + x.length ).replace(" )", "")
+              var encoderNames = encoderString.split(" ")
+              console.log("Descr: " + specificCodec.description)
+              console.log("String: " + encoderString)
+              console.log("Names: " + encoderNames)
+              console.log("Encoders for " + codecName + " : "+ encoderNames)
+              encoderNames.forEach(encoder => {
+                dropdownEncoder.append(`<option>${encoder}</option>`);
+              });
+            } else {
+              if (encoders[codecName]) {
+                console.log("Append because encoder was found without: " + codecName)
+                dropdownEncoder.append(`<option>${codecName}</option>`);
+              }
+            }
+              
+            // // Encoder single codec
+            // keysEncoder.forEach(encoder => {
+            //   // console.log(codec)
+            //   var value = encoders[encoder]
+            //   if (value.description.includes("codec " + codecNameLong)) {
+            //     // encoderName = value;
+            //     dropdownEncoder.append(`<option>${encoder}</option>`);
+            //   }
+            //   if (value.description.substring("encoder").includes("codec " + codecNameLong)) {
+            //     // encoderName = value;
+            //     dropdownEncoder.append(`<option>${encoder}</option>`);
+            //   }
+            // });
+
+
+            dropdownFormat.find('option').each(function(){
+              if ($(this).val() === extension) {
+                console.log("Selecting: " + $(this).val())
+                $(this).attr('selected', true);
+                // dropdownFormat.selectpicker('refresh');
+              }
+            });
+
+            dropdownCodec.find('option').each(function(){
+              if ($(this).val() === codecName) {
+                console.log("Selecting: " + $(this).val())
+                $(this).attr('selected', true);
+                // dropdownCodec.selectpicker('refresh');
+              }
+            });
+
+            // dropdownEncoder.find('option').each(function(){
+            //   if ($(this).val() === encoderName) {
+            //     $(this).attr('selected', true);
+            //     // dropdownCodec.selectpicker('refresh');
+            //   }
+            // });
+
+          },
+          error: function(err) {
+            console.error(err);
+          }
+        });
       });
   
       $(document).on('click', '.delete-btn', function() {
@@ -40,12 +182,20 @@
         $(this).closest('.file-box').remove();
       });
   
-      $("#submit-button").on("click", function(){
+      $("#convert-button").on("click", function(){
         console.log("BUTTON CLICK");
         console.log(formData);
         
+        const selectFormat = document.querySelector('#pickerFormat');
+        const selectCodec = document.querySelector('#pickerCodec');
+        const selectEncoder = document.querySelector('#pickerEncoder');
+
         var xhr = new XMLHttpRequest();
   
+        formData.append("format", selectFormat.value);
+        formData.append("codec", selectCodec.value);
+        formData.append("encoder", selectEncoder.value);
+
         // formData.append("format", $('#dropdownMenuButton').val());
         formData.append("bitrate", $('#inputAudioBitrate').val());
         formData.append("frequency", $('#inputAudioFrequency').val());
@@ -100,19 +250,88 @@
   
     // Dropdown stuff
     $(document).ready(function() {
-      $('.dropdown-item').click(function() {
-        $('.selected-item').text($(this).text());
-        $("#dropdownMenuButton").text($(this).text());
-        console.log('ITEM SELECTED');
-        handleSelected($(this).text());
+      const selectFormat = document.querySelector('#pickerFormat');
+      const selectCodec = document.querySelector('#pickerCodec');
+      const selectEncoder = document.querySelector('#pickerEncoder');
+      
+      selectCodec.addEventListener('change', (event) => {
+        var codecName = event.target.value;
+        console.log("Selected Codec: " + codecName);
+
+        let dropdownEncoder = $("#pickerEncoder");
+        dropdownEncoder.empty();
+
+        var codecNameLong = codecs[codecName].description;
+        console.log(codecNameLong)
+
+        // Encoder lists
+        var specificCodec = codecs[codecName];
+        if (codecs[codecName].description.includes("encoders: ")) {
+          var x = "encoders: "
+          var encoderString = specificCodec.description.substring(specificCodec.description.indexOf(x) + x.length ).replace(" )", "")
+          var encoderNames = encoderString.split(" ")
+          console.log("Descr: " + specificCodec.description)
+          console.log("String: " + encoderString)
+          console.log("Names: " + encoderNames)
+          console.log("Encoders for " + codecName + " : "+ encoderNames)
+          encoderNames.forEach(encoder => {
+            dropdownEncoder.append(`<option>${encoder}</option>`);
+          });
+        } else {
+          if (encoders[codecName]) {
+            console.log("Append because encoder was found without: " + codecName)
+            dropdownEncoder.append(`<option>${codecName}</option>`);
+          }
+        }
+          
+        // // Encoder single codec
+        // keysEncoder.forEach(encoder => {
+        //   // console.log(codec)
+        //   var value = encoders[encoder]
+        //   if (value.description.includes("codec " + codecNameLong)) {
+        //     // encoderName = value;
+        //     dropdownEncoder.append(`<option>${encoder}</option>`);
+        //   }
+        //   if (value.description.substring("encoder").includes("codec " + codecNameLong)) {
+        //     // encoderName = value;
+        //     dropdownEncoder.append(`<option>${encoder}</option>`);
+        //   }
+        // });
+
+        // const keysEncoder = Object.keys(encoders);
+        //   keysEncoder.forEach(encoder => {
+        //     var value = encoders[encoder]
+        //     if (value.description.includes(codecNameLong)) {
+        //       // encoderName = value;
+        //       dropdownEncoder.append(`<option>${encoder}</option>`);
+        //     }
+        // });
+
+        // $.ajax({
+        //   type: "GET",
+        //   url: "/formatcodecs/" + format,
+        //   success: function(data) {
+        //     var formatcodecs = data.videoCodecs;
+
+        //     console.log("RECEIVED CODECS")
+        //     let dropdownCodec = $("#pickerCodec");
+        //     dropdownCodec.empty();
+
+        //     const keysCodec = Object.keys(formatcodecs);
+        //     keysCodec.forEach(codec => {
+        //       // console.log(codec)
+        //       dropdownCodec.append(`<option>${codec}</option>`);
+        //     });
+        //   }
+        // });
       });
-  
-      // Spinner Stuff
-      $("#spinner").spinner();
-      $("#spinner").spinner({
-        min: 0,
-        max: 100
-      });
+
+      // selectCodec.addEventListener('change', (event) => {
+      //   var value = event.target.value;
+      //   console.log(value);
+      //   // Append other fields if needed
+      //   formData.append('codec', value);
+      // });
     });
   
   
@@ -121,6 +340,9 @@
       // Append other fields if needed
       formData.append('format', selected);
     }
+
+    
+    
   </script>
 
 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
@@ -167,7 +389,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <!-- <div class="container">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown button
@@ -185,23 +407,54 @@
           </div>
         </div>
         <input type="submit" id="submit-button" value="Konvertieren">
+      </div> -->
+
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <div>
+              <label class="pickerlabel" for="pickerFormat">Format Picker:</label>
+              <select class="selectpicker" id="pickerFormat">
+              </select>
+            </div>
+    
+            <div>
+              <label class="pickerlabel" for="pickerCodec">Codec Picker:</label>
+              <select class="selectpicker" id="pickerCodec">
+              </select>
+            </div>
+
+            <div>
+              <label class="pickerlabel" for="pickerEncoder">Encoder Library:</label>
+              <select class="selectpicker" id="pickerEncoder">
+              </select>
+            </div>
+          </div>
+        </form>
+        <br>
+        <!-- <input type="submit" id="convert-button" value="Konvertieren"> -->
+        <div style="display: flex; align-items: center; justify-content: center; width: 200px;">
+          <div><input style="width:  100%;" type="submit" id="convert-button" value="Convert"></div>
+          <!-- <div><input style="width:  100%;" type="submit" id="preview-button" value="Preview"></div> -->
+          <!-- <a href="http://localhost:3000/previewvideo" target="_blank">Preview</a> -->
+        </div>
       </div>
 
       <form>
         <div class="form-group">
           <label for="inputAudioBitrate">Audio bitrate</label>
-            <input type="number" class="form-control" id="inputAudioBitrate" placeholder="64, 128, 256, 320 (The value should be in kbps)">
+            <input type="text" class="form-control" id="inputAudioBitrate" placeholder="64, 128, 256, 320 (The value should be in kbps)">
           <label for="inputAudioFrequency">Audio frequency</label>
-            <input type="number" class="form-control" id="inputAudioFrequency" placeholder="44100, 48000, 96000, 192000 (The value should be in Hz)">
+            <input type="text" class="form-control" id="inputAudioFrequency" placeholder="44100, 48000, 96000, 192000 (The value should be in Hz)">
           <label for="inputAudioChannels">Audio Channels</label>
-            <input type="number" class="form-control" id="inputAudioChannels" placeholder="1, 2, 6, 8 (The value should be a number)">
+            <input type="text" class="form-control" id="inputAudioChannels" placeholder="1, 2, 6, 8 (The value should be a number)">
           <!-- <label for="inputStartTrim">Start Trim</label>
             <input type="text" class="form-control" id="inputStartTrim" placeholder="Trim Start HH:mm:ss, ss, s, mm:ss, m:ss, m">
           <label for="inputEndTrim">End Trim</label>
             <input type="text" class="form-control" id="inputEndTrim" placeholder="Trim End HH:mm:ss, ss, s, mm:ss, m:ss, m"> -->
         </div>
       </form>
-      
+
     <svg style="display:none">
       <defs>
         <symbol id="icon-imageUpload" clip-rule="evenodd" viewBox="0 0 96 96">

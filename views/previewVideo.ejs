@@ -1,0 +1,154 @@
+<style>
+  .video-container {
+    display: flex;
+  }
+
+  .video {
+    width: 50%;
+  }
+</style>
+    
+    
+    <script>
+        var formData = new FormData();
+
+        $(document).ready(function() {
+
+          const textareaLeft = document.getElementById('outputOriginal');
+          const textareaRight = document.getElementById('outputConverted');
+          textareaLeft.onscroll = function() {
+            textareaRight.scrollTop = textareaLeft.scrollTop;
+          };
+
+          // textareaRight.onscroll = function() {
+          //   textareaLeft.scrollTop = textareaRight.scrollTop;
+          // };
+
+            $.ajax({
+              url: '/probe',
+              data: { file: "<%= localfile.replace(/\\/g, '\\\\') %>" },
+              success: function(data) {
+                $('#outputOriginal').val(data.metadataString);
+              }
+            });
+
+            $.ajax({
+              url: '/probe',
+              data: { file: "<%= remotefile.replace(/\\/g, '\\\\') %>" },
+              success: function(data) {
+                $('#outputConverted').val(data.metadataString);
+              }
+            });
+
+            $("#submit-button").on("click", function(){
+            console.log("BUTTON CLICK");
+            console.log(formData);
+            
+            var xhr = new XMLHttpRequest();
+      
+            var videoLeft = document.getElementById("video-left");
+            var videoRight = document.getElementById("video-right");
+
+            // formData.append("format", $('#dropdownMenuButton').val());
+            formData.append("timestamp", $('#timestamp').val());
+            formData.append("originalvideo", videoLeft.src.split("?file=")[1]);
+            formData.append("convertedvideo", videoRight.src.split("?file=")[1]);
+      
+            $.ajax({
+              url: '/extractframes',
+              type: 'POST',
+              data: formData,
+      
+              contentType: false,
+              processData: false,
+
+              success: function(html) {
+                $('body').html(html);
+              }
+            });
+          });
+        });
+
+    </script>
+    
+
+    <div style="display:inline-block; width:45%;">
+      <div class="video-left">
+        <label for="video-left">Original Video</label>
+        <video id="video-left" src="/videostream?file=<%= localfile %>" width="100%" controls></video>
+        
+        <div class="output-container">
+          <label for="outputOriginal">Original video information</label>
+          <textarea id="outputOriginal" rows="10" style="width:100%; height:200px; overflow-y: scroll;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div style="display:inline-block; width:45%;">
+      <div class="video-right">
+        <label for="video-right">Converted Video</label>
+        <video id="video-right" src="/videostream?file=<%= remotefile %>" width="100%" controls></video>
+        
+        <div class="output-container">
+          <label for="outputConverted">Converted video information</label>
+          <textarea id="outputConverted" rows="10" style="width:100%; height:200px; overflow-y: scroll;"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- <form action="/extractframes" method="post">
+        <label for="inputTimestamp">Timestamp</label>
+        <input name="inputTimestamp" type="text" class="form-control" id="inputTimestamp" placeholder="0.0">
+        <input type="submit" value="Extract frame">
+    </form> -->
+    
+    <div class="video-container">
+      <label for="timestamp">Timestamp:</label>
+      <input type="text" id="timestamp" name="timestamp">
+      <br><br>
+      <input type="submit" id="submit-button" value="Compare Frames">
+    </div>
+
+
+  
+
+  <script>
+    // Get the audio element with id="my_video_1"
+    var videoLeft = document.getElementById("video-left");
+    var videoRight = document.getElementById("video-right");
+    videoLeft.ontimeupdate = function() {myFunction()};
+    
+    // videoLeft.addEventListener('pause', (event) => {
+    //   console.log('The Boolean paused property is now true. Either the ' +
+    //   'pause() method was called or the autoplay attribute was toggled.');
+    // });
+    
+    videoLeft.onplay = function() {
+        videoRight.play();
+    }; 
+    
+    videoLeft.onpause = function() {
+        videoRight.pause();
+    };
+    
+    videoRight.onplay = function() {
+        videoLeft.play();
+    }; 
+    
+    videoRight.onpause = function() {
+        videoLeft.pause();
+    }; 
+    
+    function myFunction() {
+      // Display the current position of the audio in a p element with id="demo"
+      document.getElementById("timestamp").value = videoLeft.currentTime;
+    }
+  </script>
+
+
+
+
+
+  
+
+
+  
